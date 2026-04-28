@@ -44,32 +44,32 @@ export function Prices() {
   );
 
   return (
-    <section ref={sectionRef} className="px-10 py-40">
-      <p className="text-lg tracking-widest uppercase opacity-50 mb-24">
+    <section ref={sectionRef} className="px-5 py-20 md:px-10 md:py-40">
+      <p className="text-lg tracking-widest uppercase opacity-50 mb-12 md:mb-24">
         Prices
       </p>
 
-      <div className="grid grid-cols-[1fr_auto_auto] gap-x-20 gap-y-0">
+      <div className="grid grid-cols-[1fr_auto_auto] gap-x-6 md:gap-x-20 gap-y-0">
         {/* Header */}
-        <div className="text-sm uppercase tracking-widest opacity-40 pb-8">
+        <div className="text-xs md:text-sm uppercase tracking-widest opacity-40 pb-4 md:pb-8">
           Treatment
         </div>
-        <div className="text-sm uppercase tracking-widest opacity-40 pb-8 text-right">
+        <div className="text-xs md:text-sm uppercase tracking-widest opacity-40 pb-4 md:pb-8 text-right">
           Session
         </div>
-        <div className="text-sm uppercase tracking-widest opacity-40 pb-8 text-right">
+        <div className="text-xs md:text-sm uppercase tracking-widest opacity-40 pb-4 md:pb-8 text-right">
           Package
         </div>
 
         {pricing.map((item) => (
           <div key={item.treatment} className="contents price-row">
-            <div className="text-3xl font-medium py-7 border-t border-foreground/15">
+            <div className="text-lg sm:text-2xl md:text-3xl font-medium py-4 md:py-7 border-t border-foreground/15">
               {item.treatment}
             </div>
-            <div className="text-2xl py-7 border-t border-foreground/15 text-right opacity-70">
+            <div className="text-base sm:text-xl md:text-2xl py-4 md:py-7 border-t border-foreground/15 text-right opacity-70">
               {item.session}
             </div>
-            <div className="text-2xl py-7 border-t border-foreground/15 text-right opacity-50">
+            <div className="text-base sm:text-xl md:text-2xl py-4 md:py-7 border-t border-foreground/15 text-right opacity-50">
               {item.package}
             </div>
           </div>

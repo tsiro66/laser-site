@@ -46,11 +46,11 @@ export function Preloader() {
     >
       <span
         ref={textRef}
-        className="text-5xl tracking-[0.3em] uppercase text-background opacity-0 text-center leading-relaxed"
+        className="text-3xl md:text-5xl tracking-[0.3em] uppercase text-background opacity-0 text-center leading-relaxed"
       >
         La Luce Estetica
         <br />
-        <span className="text-2xl tracking-[0.4em]">Skin Clinic</span>
+        <span className="text-lg md:text-2xl tracking-[0.4em]">Skin Clinic</span>
       </span>
     </div>
   );

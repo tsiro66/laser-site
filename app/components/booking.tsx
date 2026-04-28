@@ -43,11 +43,11 @@ export function Booking() {
   return (
     <section
       ref={sectionRef}
-      className="px-10 py-40 min-h-screen flex flex-col items-center justify-center text-center"
+      className="px-5 py-20 md:px-10 md:py-40 min-h-screen flex flex-col items-center justify-center text-center"
     >
       <h2
         ref={textRef}
-        className="text-[6rem] leading-[0.95] uppercase tracking-tight font-medium max-w-5xl"
+        className="text-[2.5rem] sm:text-[4rem] md:text-[6rem] leading-[0.95] uppercase tracking-tight font-medium max-w-5xl"
       >
         Your skin deserves this
       </h2>
@@ -55,7 +55,7 @@ export function Booking() {
       <Link
         ref={linkRef}
         href="/book"
-        className="mt-16 text-2xl tracking-wide opacity-70 hover:opacity-100 transition-opacity"
+        className="mt-10 md:mt-16 text-xl md:text-2xl tracking-wide opacity-70 hover:opacity-100 transition-opacity"
       >
         book your session &rarr;
       </Link>

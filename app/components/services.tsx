@@ -72,8 +72,8 @@ export function Services() {
   );
 
   return (
-    <section ref={sectionRef} className="relative z-10 bg-background px-10 py-40 -mt-[100vh]">
-      <p className="text-lg tracking-widest uppercase opacity-50 mb-24">
+    <section ref={sectionRef} className="relative z-10 bg-background px-5 py-20 md:px-10 md:py-40 -mt-[100vh]">
+      <p className="text-lg tracking-widest uppercase opacity-50 mb-12 md:mb-24">
         What we offer
       </p>
 
@@ -81,15 +81,15 @@ export function Services() {
         {services.map((service) => (
           <div
             key={service.number}
-            className="service-item flex items-baseline justify-between border-t border-foreground/15 py-16 gap-16"
+            className="service-item flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between border-t border-foreground/15 py-8 md:py-16 md:gap-16"
           >
             <span className="text-lg opacity-40 shrink-0">
               {service.number}
             </span>
-            <h3 className="text-[4rem] leading-[1] uppercase tracking-tight font-medium flex-1">
+            <h3 className="text-[2rem] sm:text-[3rem] md:text-[4rem] leading-[1] uppercase tracking-tight font-medium flex-1">
               {service.title}
             </h3>
-            <p className="text-xl leading-relaxed opacity-60 max-w-sm text-right">
+            <p className="text-base md:text-xl leading-relaxed opacity-60 max-w-sm md:text-right">
               {service.description}
             </p>
           </div>

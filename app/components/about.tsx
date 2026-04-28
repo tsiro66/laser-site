@@ -40,19 +40,19 @@ export function About() {
   );
 
   return (
-    <section ref={sectionRef} className="px-10 py-40 min-h-screen flex flex-col justify-center">
-      <p className="text-lg tracking-widest uppercase opacity-50 mb-24">
+    <section ref={sectionRef} className="px-5 py-20 md:px-10 md:py-40 min-h-screen flex flex-col justify-center">
+      <p className="text-lg tracking-widest uppercase opacity-50 mb-12 md:mb-24">
         Philosophy
       </p>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2 md:gap-4">
         {lines.map((line, i) => (
           <span
             key={i}
             ref={(el) => {
               if (el) lineRefs.current[i] = el;
             }}
-            className="block text-[5.5rem] leading-[1.05] uppercase tracking-tight font-medium"
+            className="block text-[2rem] sm:text-[3.5rem] md:text-[5.5rem] leading-[1.05] uppercase tracking-tight font-medium"
           >
             {line}
           </span>

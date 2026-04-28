@@ -53,20 +53,20 @@ export function Hero() {
 
         {/* Text overlay with mix-blend-difference */}
         <div className="relative z-10 flex flex-col h-full mix-blend-difference text-white">
-          <div className="flex flex-col flex-1 px-10 pt-24 py-12 justify-between">
-          <h1 className="text-[7rem] leading-[0.9] uppercase tracking-tight font-medium max-w-3xl">
-            Be your own Muse
+          <div className="flex flex-col flex-1 px-5 pt-20 py-8 md:px-10 md:pt-24 md:py-12 justify-between">
+          <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[6rem] leading-[0.9] uppercase tracking-tight font-medium max-w-2xl">
+            A new era of beauty
           </h1>
 
-          <div className="flex items-end justify-between">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <Link
               href="/book"
-              className="text-xl tracking-wide opacity-70 hover:opacity-100 transition-opacity pb-4"
+              className="text-lg md:text-xl tracking-wide opacity-70 hover:opacity-100 transition-opacity pb-2 md:pb-4"
             >
               book now &rarr;
             </Link>
 
-            <h2 className="text-[5rem] leading-[0.9] uppercase tracking-tight font-medium text-right max-w-3xl">
+            <h2 className="text-[2rem] sm:text-[3rem] md:text-[5rem] leading-[0.9] uppercase tracking-tight font-medium sm:text-right max-w-3xl">
               Feel confident in the skin you are in
             </h2>
           </div>

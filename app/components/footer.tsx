@@ -2,11 +2,13 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="px-10 py-16 border-t border-foreground/10">
-      <div className="flex items-start justify-between">
+    <footer className="px-5 py-10 md:px-10 md:py-16 border-t border-foreground/10">
+      <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
         <div>
-          <Link href="/" className="text-3xl font-semibold tracking-tight">
-            La luce
+          <Link href="/" className="block">
+            <span className="text-2xl md:text-3xl font-semibold tracking-tight">La Luce Estetica</span>
+            <br />
+            <span className="text-base md:text-lg tracking-[0.57em] uppercase opacity-60">Skin Clinic</span>
           </Link>
           <p className="mt-4 text-base opacity-50 max-w-xs leading-relaxed">
             Where science meets beauty. Premium laser aesthetics for those who
@@ -14,7 +16,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="flex gap-24">
+        <div className="flex gap-12 sm:gap-16 md:gap-24">
           <div className="flex flex-col gap-4">
             <span className="text-sm uppercase tracking-widest opacity-40">
               Navigate
@@ -59,7 +61,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mt-20 flex items-center justify-between text-sm opacity-30">
+      <div className="mt-12 md:mt-20 flex items-center justify-between text-sm opacity-30">
         <span>&copy; {new Date().getFullYear()} La Luce Estetica</span>
         <span>All rights reserved</span>
       </div>
