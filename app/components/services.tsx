@@ -1,0 +1,85 @@
+"use client";
+
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const services = [
+  {
+    number: "01",
+    title: "Laser Hair Removal",
+    description:
+      "Precision light technology for lasting smoothness. Gentle, effective, permanent.",
+  },
+  {
+    number: "02",
+    title: "Skin Rejuvenation",
+    description:
+      "Restore your natural radiance. Targeted treatments that renew texture and tone.",
+  },
+  {
+    number: "03",
+    title: "Body Contouring",
+    description:
+      "Sculpt and refine without surgery. Non-invasive treatments shaped to you.",
+  },
+];
+
+export function Services() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const items = gsap.utils.toArray<HTMLElement>(".service-item");
+      items.forEach((item) => {
+        gsap.fromTo(
+          item,
+          { opacity: 0, y: 80 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 85%",
+              end: "top 50%",
+              scrub: true,
+            },
+          }
+        );
+      });
+    },
+    { scope: sectionRef }
+  );
+
+  return (
+    <section ref={sectionRef} className="px-10 py-40">
+      <p className="text-lg tracking-widest uppercase opacity-50 mb-24">
+        What we offer
+      </p>
+
+      <div className="flex flex-col">
+        {services.map((service) => (
+          <div
+            key={service.number}
+            className="service-item flex items-baseline justify-between border-t border-foreground/15 py-16 gap-16"
+          >
+            <span className="text-lg opacity-40 shrink-0">
+              {service.number}
+            </span>
+            <h3 className="text-[4rem] leading-[1] uppercase tracking-tight font-medium flex-1">
+              {service.title}
+            </h3>
+            <p className="text-xl leading-relaxed opacity-60 max-w-sm text-right">
+              {service.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
