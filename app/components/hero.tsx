@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
-import { Navbar } from "./navbar";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +35,7 @@ export function Hero() {
   );
 
   return (
-    <section ref={sectionRef} className="relative h-[300vh]">
+    <section ref={sectionRef} data-hero className="relative h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden bg-background">
         {/* Image */}
         <div
@@ -53,8 +53,7 @@ export function Hero() {
 
         {/* Text overlay with mix-blend-difference */}
         <div className="relative z-10 flex flex-col h-full mix-blend-difference text-white">
-          <Navbar />
-          <div className="flex flex-col flex-1 px-10 py-12 justify-between">
+          <div className="flex flex-col flex-1 px-10 pt-24 py-12 justify-between">
           <h1 className="text-[7rem] leading-[0.9] uppercase tracking-tight font-medium max-w-3xl">
             Be your own Muse
           </h1>

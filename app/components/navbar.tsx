@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
@@ -7,10 +10,28 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const [pastHero, setPastHero] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setPastHero(window.scrollY > window.innerHeight * 2);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="flex items-center justify-between px-10 py-6 text-blend">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6 transition-colors duration-300 ${
+        pastHero
+          ? "bg-background/40 backdrop-blur-sm text-foreground/80"
+          : "bg-transparent text-white mix-blend-difference"
+      }`}
+    >
       <Link href="/" className="text-4xl font-semibold tracking-tight">
-        La luce
+        La Luce Estetica
       </Link>
 
       <div className="flex items-center gap-12">
