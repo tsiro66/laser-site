@@ -33,6 +33,21 @@ export function Services() {
 
   useGSAP(
     () => {
+      gsap.fromTo(
+        sectionRef.current,
+        { xPercent: 100 },
+        {
+          xPercent: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "top top",
+            scrub: true,
+          },
+        }
+      );
+
       const items = gsap.utils.toArray<HTMLElement>(".service-item");
       items.forEach((item) => {
         gsap.fromTo(
@@ -57,7 +72,7 @@ export function Services() {
   );
 
   return (
-    <section ref={sectionRef} className="px-10 py-40">
+    <section ref={sectionRef} className="relative z-10 bg-background px-10 py-40 -mt-[100vh]">
       <p className="text-lg tracking-widest uppercase opacity-50 mb-24">
         What we offer
       </p>
