@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,6 +31,7 @@ const services = [
 
 export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -43,6 +45,22 @@ export function Services() {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "top top",
+            scrub: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        imageRef.current,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "top 85%",
+            end: "top 50%",
             scrub: true,
           },
         }
@@ -76,6 +94,29 @@ export function Services() {
       <p className="text-lg tracking-widest uppercase opacity-50 mb-12 md:mb-24">
         What we offer
       </p>
+
+      <div className="grid md:grid-cols-12 gap-10 md:gap-16 lg:gap-24 mb-20 md:mb-32 items-end">
+        <div
+          ref={imageRef}
+          className="md:col-span-5 relative aspect-[3/4] overflow-hidden"
+        >
+          <Image
+            src="/image2.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 768px) 100vw, 40vw"
+            className="object-cover grayscale"
+          />
+        </div>
+        <div className="md:col-span-7 flex flex-col">
+          <h2 className="text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4.5rem] leading-[1.05] uppercase tracking-tight font-medium">
+            Treatments shaped around you
+          </h2>
+          <p className="text-base md:text-xl leading-relaxed opacity-60 mt-8 md:mt-12 max-w-md">
+            Each session is considered, never rushed. The result is skin that feels like itself — only quieter, clearer, more at ease.
+          </p>
+        </div>
+      </div>
 
       <div className="flex flex-col">
         {services.map((service) => (
