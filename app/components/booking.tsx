@@ -27,17 +27,17 @@ export function Booking() {
       tl.fromTo(
         textRef.current,
         { scale: 0.85, opacity: 0 },
-        { scale: 1, opacity: 1, ease: "none" }
+        { scale: 1, opacity: 1, ease: "none" },
       );
 
       tl.fromTo(
         linkRef.current,
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, ease: "none" },
-        0.5
+        0.5,
       );
     },
-    { scope: sectionRef }
+    { scope: sectionRef },
   );
 
   return (
@@ -54,7 +54,8 @@ export function Booking() {
 
       <Link
         ref={linkRef}
-        href="/book"
+        href="https://www.treatwell.gr/katasthma/la-luce-estetica-skin-clinic/"
+        target="_blank"
         className="mt-10 md:mt-16 text-xl md:text-2xl tracking-wide opacity-70 hover:opacity-100 transition-opacity"
       >
         book your session &rarr;

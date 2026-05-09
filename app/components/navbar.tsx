@@ -26,7 +26,9 @@ export function Navbar() {
   /* lock body scroll when menu open */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   return (
@@ -40,7 +42,10 @@ export function Navbar() {
               : "bg-transparent text-white mix-blend-difference"
         }`}
       >
-        <Link href="/" className="text-2xl md:text-4xl font-semibold tracking-tight">
+        <Link
+          href="/"
+          className="text-2xl md:text-4xl font-semibold tracking-tight"
+        >
           La Luce Estetica
         </Link>
 
@@ -59,7 +64,8 @@ export function Navbar() {
 
         {/* Desktop book now */}
         <Link
-          href="/book"
+          href="https://www.treatwell.gr/katasthma/la-luce-estetica-skin-clinic/"
+          target="_blank"
           className="hidden md:block text-xl tracking-wide opacity-70 hover:opacity-100 transition-opacity"
         >
           book now &rarr;
@@ -87,7 +93,9 @@ export function Navbar() {
       {/* Fullscreen mobile menu overlay */}
       <div
         className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-foreground text-background transition-opacity duration-500 md:hidden ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       >
         <div className="flex flex-col items-center gap-10">
@@ -102,8 +110,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="/book"
-            onClick={() => setMenuOpen(false)}
+            href="https://www.treatwell.gr/katasthma/la-luce-estetica-skin-clinic/"
             className="mt-6 text-2xl tracking-wide opacity-70 hover:opacity-100 transition-opacity"
           >
             book now &rarr;
